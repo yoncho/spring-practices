@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> hello spring ! it`s hello.jsp</h1>
+	<h1> hello ${name } world!</h1>
 </body>
 </html>
