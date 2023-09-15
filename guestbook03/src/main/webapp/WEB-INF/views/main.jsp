@@ -29,7 +29,7 @@
 	
 	<table width=510 border=1>
 		<tr>
-			<td>[${status.count}]</td>
+			<td>[${fn:length(list) -  status.count + 1}]</td>
 			<td>${vo.name}</td>
 			<td>${vo.regDate}</td>
 			<td><a href="${pageContext.request.contextPath}/delete?no=${vo.no}">삭제</a></td>

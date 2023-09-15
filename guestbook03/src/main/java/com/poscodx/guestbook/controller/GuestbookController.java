@@ -27,10 +27,15 @@ public class GuestbookController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(value="add", method=RequestMethod.GET)
+	public String add() {
+			return "redirect:/";
+	}
+	
 	@RequestMapping(value="delete", method=RequestMethod.POST)
-	public String delete(int no, String password) {
-		guestbookRepository.delete(no, password);
-		return "redirect:/";
+	public String delete(GuestbookVo vo) {
+		guestbookRepository.delete(vo.getNo(), vo.getPassword());
+		return "redirect:/";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 	}
 	@RequestMapping(value="delete", method=RequestMethod.GET)
 	public String delete(int no, Model model) {
