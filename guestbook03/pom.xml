@@ -7,10 +7,9 @@
 		<artifactId>spring-practices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>emaillist03</artifactId>
+	<artifactId>guestbook03</artifactId>
 	<packaging>war</packaging>
-	
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
@@ -25,7 +24,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org-springframework-version}</version>
 		</dependency>
-		
+
 		<!-- jstl -->
 		<dependency>
 			<groupId>jstl</groupId>
@@ -38,7 +37,7 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>3.0.8</version>
 		</dependency>
-		
+
 		<!--servlet-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -55,7 +54,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>emaillist03</finalName>
+		<finalName>guestbook03</finalName>
 	</build>
-	
 </project>
