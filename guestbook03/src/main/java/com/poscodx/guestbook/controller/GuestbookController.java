@@ -21,15 +21,9 @@ public class GuestbookController {
 		return "main";
 	}
 
-	@RequestMapping(value="add", method=RequestMethod.POST)
 	public String add(GuestbookVo vo) {
 		guestbookRepository.insert(vo);
 		return "redirect:/";
-	}
-	
-	@RequestMapping(value="add", method=RequestMethod.GET)
-	public String add() {
-			return "redirect:/";
 	}
 	
 	@RequestMapping(value="delete", method=RequestMethod.POST)
