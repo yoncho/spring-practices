@@ -1,8 +1,10 @@
 package com.poscodx.aoptest.aspect;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -21,16 +23,32 @@ public class MyAspect {
 	public void adviceAfter() {
 		System.out.println("----after advice----");
 	}
-	
-	//접근 지시자는 생략 가능!
+
 	@AfterReturning("execution(* com.poscodx.aoptest.service.ProductService.find(String))") 
 	public void adviceAfterReturning() {
 		System.out.println("----after returning advice----");
 	}
-	
-	//접근 지시자는 생략 가능!
-	@AfterThrowing(value="execution(* *..*.ProductService.find(..))", throwing="ex") 
+
+	@AfterThrowing(value="execution(* *..*.*.*(..))", throwing="ex") 
 	public void adviceAfterThrowing(Throwable ex) {
 		System.out.println("----after throwing advice---- : " + ex);
 	}
+	
+	@Around("execution(* *..*.ProductService.*(..))") 
+	public Object adviceAround(ProceedingJoinPoint pjp) throws Throwable {
+		/*before*/
+		System.out.println("----around(before) advice----");
+		
+		/* Point Cut Method 실행 */
+		//Object[] params = {"Camera"};
+		//Object result = pjp.proceed(params);
+		
+		Object result = pjp.proceed();
+		
+		/*after*/
+		System.out.println("----around(after) advice----");
+		
+		return result;
+	}
+	
 }
