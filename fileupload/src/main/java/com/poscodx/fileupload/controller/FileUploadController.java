@@ -31,7 +31,7 @@ public class FileUploadController {
 		
 		/* 이미지 파일 업로드 처리 */
 		String url = fileUploadService.restore(multipartFile);
-		
+		System.out.println(url);
 		model.addAttribute("url", url);
 		return "result";
 	}
