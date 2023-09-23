@@ -14,10 +14,8 @@
 	<div class="result-images">
 		<img src="${pageContext.request.contextPath }${url}" style="width:150px"><br>
 	</div>
-
 	<p>
 		<a href='${pageContext.request.contextPath }/form'> 다시 업로드 하기 </a>
 	</p>
-	
 </body>
 </html>

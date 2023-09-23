@@ -15,5 +15,7 @@
 		<module>aoptest</module>
 		<module>logex</module>
 		<module>fileupload</module>
+		<module>ZapplicationContextAutoCreateVo</module>
+		<module>ztest</module>
 	</modules>
 </project>

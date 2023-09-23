@@ -26,9 +26,7 @@ public class FileUploadController {
 			@RequestParam("email") String email,
 			@RequestParam("file") MultipartFile multipartFile,
 			Model model) {
-		System.out.println("email : " + email);
-		System.out.println(multipartFile.getOriginalFilename());
-		
+	
 		/* 이미지 파일 업로드 처리 */
 		String url = fileUploadService.restore(multipartFile);
 		System.out.println(url);
