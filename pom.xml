@@ -17,5 +17,6 @@
 		<module>fileupload</module>
 		<module>ZapplicationContextAutoCreateVo</module>
 		<module>ztest</module>
+		<module>container</module>
 	</modules>
 </project>
