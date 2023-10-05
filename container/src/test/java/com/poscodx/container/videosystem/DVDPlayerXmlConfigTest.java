@@ -1,5 +1,6 @@
 package com.poscodx.container.videosystem;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Disabled;
@@ -24,16 +25,49 @@ public class DVDPlayerXmlConfigTest {
 	DigitalVideoDisc dvd2;
 
 	@Autowired
-	@Qualifier("avengerInfiniteWar")
+	@Qualifier("avengersInfiniteWar")
 	DigitalVideoDisc dvd3;
 	
 	@Autowired
-	@Qualifier("avengerEndGame")
+	@Qualifier("avengersEndGame")
 	DigitalVideoDisc dvd4;
 	
 	@Autowired
-	@Qualifier("avengerAgeOfUltron")
+	@Qualifier("avengersAgeOfUltron")
 	DigitalVideoDisc dvd5;
+	
+	@Autowired
+	@Qualifier("avengersCaptainAmerica")
+	DigitalVideoDisc dvd6;
+	
+	@Autowired
+	@Qualifier("avengersDirectorEdition")
+	DigitalVideoDisc dvd7;
+	
+	@Autowired
+	@Qualifier("avengersExpansionEdition1")
+	DigitalVideoDisc dvd8;
+	
+	@Autowired
+	@Qualifier("avengersExpansionEdition2")
+	DigitalVideoDisc dvd9;
+	
+	@Autowired
+	@Qualifier("avengersExpansionEdition3")
+	DigitalVideoDisc dvd10;
+	
+	@Autowired
+	DVDPack dvdPack;
+	
+	@Autowired
+	@Qualifier("dvdPlayer1")
+	DVDPlayer dvdPlayer1;
+	
+	@Autowired
+	@Qualifier("dvdPlayer2")
+	DVDPlayer dvdPlayer2;
+	
+	///////////////////////////////////////////
 	
 	@Disabled //test 제외 대상 설정
 	@Test
@@ -59,5 +93,45 @@ public class DVDPlayerXmlConfigTest {
 	@Test
 	public void testDVD5() {
 		assertNotNull(dvd5);
+	}
+	
+	@Test
+	public void testDVD6() {
+		assertNotNull(dvd6);
+	}
+	
+	@Test
+	public void testDVD7() {
+		assertNotNull(dvd7);
+	}
+	
+	@Test
+	public void testDVD8() {
+		assertNotNull(dvd8);
+	}
+	
+	@Test
+	public void testDVD9() {
+		assertNotNull(dvd9);
+	}
+	
+	@Test
+	public void testDVD10() {
+		assertNotNull(dvd10);
+	}
+	
+	@Test
+	public void testPack() {
+		assertNotNull(dvdPack);
+	}
+	
+	@Test
+	public void testPlay1() {
+		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer1.play());
+	}
+	
+	@Test
+	public void testPlay2() {
+		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer2.play());
 	}
 }
