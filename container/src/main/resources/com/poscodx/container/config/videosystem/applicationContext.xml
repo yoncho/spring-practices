@@ -87,7 +87,7 @@
 		</property>
 	</bean>
 		
-	<!-- 10. 빈 설정: 프로퍼티 사용3 -->
+	<!-- 11. 빈 설정: 프로퍼티 사용3 -->
 	<util:list id="tempActorList">
 		<value>Robert Downey Jr.</value>
 		<value>Christ Evans</value>
@@ -98,14 +98,26 @@
 	p:actors-ref="tempActorList">
 	</bean>
 	
-	<!-- 11. 빈 설정: 생성자 주입 1 -->
+	<!-- 12. 빈 설정: 생성자 주입 1 -->
 	<bean id="dvdPlayer1" class="com.poscodx.container.videosystem.DVDPlayer">
 		<constructor-arg ref="ironMan"/>
 	</bean>
 	
-	<!-- 12. 빈 설정: 생성자 주입 2 -->
+	<!-- 13. 빈 설정: 생성자 주입 2: c-namespace의 argument name을 사용하는 방법 -->
 	<bean id="dvdPlayer2" class="com.poscodx.container.videosystem.DVDPlayer"
 	c:dvd-ref="ironMan"/>
 
+	<!-- 14. 빈 설정: 생성자 주입 3: c-namespace의 argument index를 사용하는 방법 -->
+	<bean id="dvdPlayer3" class="com.poscodx.container.videosystem.DVDPlayer"
+	c:_0-ref="ironMan"/>
+	
+	<!-- 15. 빈 설정: 프로퍼티 주입1 -->
+	<bean id="dvdPlayer4" class="com.poscodx.container.videosystem.DVDPlayer">
+		<property name="dvd" ref="ironMan"/>
+	</bean>
+	
+	<!-- 16. 빈 설정: 프로퍼티 주입2: p-namespace -->
+	<bean id="dvdPlayer5" class="com.poscodx.container.videosystem.DVDPlayer"
+	p:dvd-ref="ironMan"/>
 	
 </beans>

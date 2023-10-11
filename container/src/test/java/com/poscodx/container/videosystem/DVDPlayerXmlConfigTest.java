@@ -67,6 +67,18 @@ public class DVDPlayerXmlConfigTest {
 	@Qualifier("dvdPlayer2")
 	DVDPlayer dvdPlayer2;
 	
+	@Autowired
+	@Qualifier("dvdPlayer3")
+	DVDPlayer dvdPlayer3;
+	
+	@Autowired
+	@Qualifier("dvdPlayer4")
+	DVDPlayer dvdPlayer4;
+	
+	@Autowired
+	@Qualifier("dvdPlayer5")
+	DVDPlayer dvdPlayer5;
+	
 	///////////////////////////////////////////
 	
 	@Disabled //test 제외 대상 설정
@@ -133,5 +145,20 @@ public class DVDPlayerXmlConfigTest {
 	@Test
 	public void testPlay2() {
 		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer2.play());
+	}
+	
+	@Test
+	public void testPlay3() {
+		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer3.play());
+	}
+	
+	@Test
+	public void testPlay4() {
+		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer4.play());
+	}
+	
+	@Test
+	public void testPlay5() {
+		assertEquals("playing Movie MARVEL`s Iron Man", dvdPlayer5.play());
 	}
 }
